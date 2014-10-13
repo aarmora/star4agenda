@@ -7,7 +7,10 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  get 'home/index'
+  resources :home, :only => [:create, :show, :update, :destroy]
+
+  get 'getJson' => 'home#getJson'
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
