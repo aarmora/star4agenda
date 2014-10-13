@@ -6,16 +6,15 @@ class HomeController < ApplicationController
 		render :json => @agenda
 	end
 
-	def update
-		puts params[:opening_prayer]
+	def updateAJAX
+		@agenda = Agenda.find(params[:id])
+
+		@agenda.update_attributes(:sunday => params[:sunday], :opening_prayer => params[:opening_prayer], :closing_prayer => params[:closing_prayer], :song => params[:song], :directing => params[:directing])
+
+		@agenda.save!
+
 
 		render nothing:true
-
-		#@agenda = Agenda.find(params[:id])
-
-		#@agenda.sunday = params[:sunday]
-		#@agenda.opening_prayer = params[:opening_prayer]
-		#@agenda.save!
 	end
 
 end

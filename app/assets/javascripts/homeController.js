@@ -12,8 +12,8 @@
 
 		$scope.update = function(){
 			$http({
-				url:'home/update',
-				method: 'PUT',
+				url:'home/updateAJAX',
+				method: 'POST',
 				params: $scope.data
 
 			});

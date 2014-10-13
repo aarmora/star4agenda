@@ -9,7 +9,10 @@ Rails.application.routes.draw do
 
   resources :home, :only => [:create, :show, :update, :destroy]
 
+
   get 'getJson' => 'home#getJson'
+
+  post 'home/updateAJAX' => 'home#updateAJAX'
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
